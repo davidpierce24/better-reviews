@@ -1,10 +1,13 @@
+import ChartCard from '@/components/common/ChartCard'
+import TopAnime from '@/components/mal/TopAnime'
 import React from 'react'
 
 function page() {
   return (
-    <div >
-      
-    </div>
+    <main 
+    className='flex-1 flex justify-center items-center'>
+      <TopAnime />
+    </main>
   )
 }
 

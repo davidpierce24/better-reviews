@@ -25,19 +25,25 @@ function Header() {
   return (
     <header className="flex justify-between items-center py-2 px-4 border-b">
         <div className="flex gap-x-2 items-center">
-        <Button variant="default" size="icon">
-            <MdOutlineStackedLineChart className="h-6 w-6" />
-        </Button>
-        <h1 className="font-semibold">
-            Peaks
-        </h1>
+        <Link href="/">
+            <Button variant="default" size="icon">
+                <MdOutlineStackedLineChart className="h-6 w-6" />
+            </Button>
+        </Link>
+        <Link href="/">
+            <h1 className="font-semibold">
+                Peaks
+            </h1>
+        </Link>
         </div>
 
       <div className="flex gap-x-2 items-center">
         <nav>
           <ul className="flex gap-x-2 text-sm">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href}
+              className="hover:bg"
+              >
                 <Link href={link.href}>{link.name}</Link>
               </li>
             ))}

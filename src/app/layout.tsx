@@ -11,6 +11,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
+
 export const metadata: Metadata = {
   title: "Better Reviews",
   description: "complex reviews for complex people",
@@ -25,7 +26,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body 
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased flex flex-col",
           fontSans.variable
         )}>
         <ThemeProvider
