@@ -20,9 +20,9 @@ interface Anime {
     score: number;
 }
 
-async function TopAnime() {
+async function PopularAnime() {
   try {
-    const response = await fetch(`https://api.jikan.moe/v4/top/anime?page=1`);
+    const response = await fetch(`https://api.jikan.moe/v4/top/anime?page=1&filter=bypopularity`);
     if (!response.ok) {
       throw new Error(`API call failed with status: ${response.status}`);
     }
@@ -33,9 +33,9 @@ async function TopAnime() {
       return null; // Or some error state/component
     }
 
-    const TopAnimeData: data[] = json.data;
+    const PopularAnimeData: data[] = json.data;
 
-    const animeList: Anime[] = TopAnimeData.map((item) => ({
+    const animeList: Anime[] = PopularAnimeData.map((item) => ({
       rank: item.rank,
       title: item.title,
       imageUrl: item.images.webp.image_url,
@@ -43,12 +43,12 @@ async function TopAnime() {
     }));
 
     return (
-      <SideScrollCharts listTitle="Top Anime - MAL" itemList={animeList} />
+      <SideScrollCharts listTitle="Popular Anime - MAL" itemList={animeList} />
     );
   } catch (error) {
-    console.error("Failed to fetch top anime:", error);
+    console.error("Failed to fetch popular anime:", error);
     return null; // Or some error state/component
   }
 }
 
-export default TopAnime;
+export default PopularAnime;

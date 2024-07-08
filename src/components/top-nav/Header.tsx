@@ -23,7 +23,7 @@ const navLinks = [
 
 function Header() {
   return (
-    <header className="flex justify-between items-center py-2 px-4 border-b">
+    <header className="flex justify-between items-center py-2 px-4 border-b sticky top-0 z-10 backdrop-blur-md">
         <div className="flex gap-x-2 items-center">
         <Link href="/">
             <Button variant="default" size="icon">
