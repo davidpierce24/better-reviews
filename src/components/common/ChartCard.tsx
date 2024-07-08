@@ -23,7 +23,7 @@ const ChartCard: React.FC<ChartCardProps> = (
     <div className='relative  min-w-52'>
         <div className='py-6 px-6 relative text-transparent hover:text-primary'>
         
-        <p className='absolute font-semibold text-xl top-1/4 left-1/4'>{title}</p>
+        <p className='absolute font-semibold text-lg m-atuo max-w-32 max-h-32 overflow-hidden top-0 right-0'>{title}</p>
         <Image 
             src={imageUrl} 
             alt={title}

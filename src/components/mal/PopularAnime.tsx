@@ -21,7 +21,7 @@ interface Anime {
 
 async function PopularAnime() {
   try {
-    const response = await fetch(`http://api.jikan.moe/v4/top/anime?page=1&filter=bypopularity`);
+    const response = await fetch(`http://api.jikan.moe/v4/top/anime?page=1&filter=bypopularity`, { signal: AbortSignal.timeout(10000) });
     console.log(response);
     if (!response.ok) {
       throw new Error(`API call failed with status: ${response.status}`);

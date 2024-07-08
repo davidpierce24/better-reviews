@@ -10,8 +10,8 @@ function page() {
     <main 
     className='flex-1 flex py-6 flex-col gap-y-16'>
       <TopAnime />
-      <CurrentSeasonAnime />
       <PopularAnime />
+      <CurrentSeasonAnime />
     </main>
   )
 }
