@@ -1,5 +1,4 @@
 import React from "react";
-import ChartCard from "../common/ChartCard";
 import SideScrollCharts from "../common/SideScrollCharts";
 
 interface data {

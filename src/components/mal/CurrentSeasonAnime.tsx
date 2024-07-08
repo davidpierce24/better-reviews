@@ -19,10 +19,9 @@ interface Anime {
     score: number;
 }
 
-async function PopularAnime() {
+async function CurrentSeasonAnime() {
   try {
-    const response = await fetch(`http://api.jikan.moe/v4/top/anime?page=1&filter=bypopularity`);
-    console.log(response);
+    const response = await fetch(`https://api.jikan.moe/v4/seasons/now`);
     if (!response.ok) {
       throw new Error(`API call failed with status: ${response.status}`);
     }
@@ -33,9 +32,9 @@ async function PopularAnime() {
       return null; // Or some error state/component
     }
 
-    const PopularAnimeData: data[] = json.data;
+    const CurrentSeasonAnimeData: data[] = json.data;
 
-    const animeList: Anime[] = PopularAnimeData.map((item) => ({
+    const animeList: Anime[] = CurrentSeasonAnimeData.map((item) => ({
       rank: item.rank,
       title: item.title,
       imageUrl: item.images.webp.image_url,
@@ -43,12 +42,12 @@ async function PopularAnime() {
     }));
 
     return (
-      <SideScrollCharts listTitle="Popular Anime - MAL" itemList={animeList} />
+      <SideScrollCharts listTitle="Curren Season - MAL" itemList={animeList} />
     );
   } catch (error) {
-    console.error("Failed to fetch popular anime:", error);
+    console.error("Failed to fetch top anime:", error);
     return null; // Or some error state/component
   }
 }
 
-export default PopularAnime;
+export default CurrentSeasonAnime;

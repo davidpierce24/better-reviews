@@ -21,11 +21,13 @@ const ChartCard: React.FC<ChartCardProps> = (
 
   return (
     <div className='relative  min-w-52'>
-        <div className='py-6 px-6'>
-
+        <div className='py-6 px-6 relative text-transparent hover:text-primary'>
+        
+        <p className='absolute font-semibold text-xl top-1/4 left-1/4'>{title}</p>
         <Image 
-            src={imageUrl} alt='Derpmander'
-            className='rounded-2xl h-[200px] w-[200px]'
+            src={imageUrl} 
+            alt={title}
+            className='rounded-2xl h-[200px] w-[200px] hover:opacity-30'
             width={200} 
             height={200}
             />
