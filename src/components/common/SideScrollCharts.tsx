@@ -18,7 +18,7 @@ const SideScrollCharts: React.FC<ScrollProps> = (
     { listTitle, itemList }
 ) => {
   return (
-    <div className="overflow-auto pl-5 flex flex-col gap-y-2">
+    <div className="overflow-auto pl-5 flex flex-col gap-y-2 ">
       <h1 className="text-3xl font-semibold">{listTitle}</h1>
       <div className="flex overflow-scroll">
         {itemList.map((item: ChartCardProps, index: number) => (

@@ -20,10 +20,12 @@ const ChartCard: React.FC<ChartCardProps> = (
 ) => {
 
   return (
-    <div className='relative  min-w-52'>
+    <div className='relative min-w-52'>
         <div className='py-6 px-6 relative text-transparent hover:text-primary'>
         
-        <p className='absolute font-semibold text-lg m-atuo max-w-32 max-h-32 overflow-hidden top-0 right-0'>{title}</p>
+        <div className='absolute p-4 inset-5 bg-transparent rounded-2xl hover:bg-background/90 text-transparent hover:text-primary flex justify-center items-center text-center overflow-hidden font-semibold'>
+            <p>{title}</p>
+        </div>
         <Image 
             src={imageUrl} 
             alt={title}
@@ -41,11 +43,11 @@ const ChartCard: React.FC<ChartCardProps> = (
             {rank}
         </p>
         <p
-        className={`${lobster.className} text-5xl font-bold absolute drop-shadow-xl drop-shadow-black text-background bottom-2 right-1`}>
+        className={`${lobster.className} text-4xl font-bold absolute drop-shadow-xl drop-shadow-black text-background bottom-2 right-1`}>
             {score}
         </p>
         <p
-        className={`${lobster.className} text-5xl font-bold absolute drop-shadow-xl drop-shadow-black text-primary bottom-2 right-2`}>
+        className={`${lobster.className} text-4xl font-bold absolute drop-shadow-xl drop-shadow-black text-primary bottom-2 right-2`}>
             {score}
         </p>
     </div>

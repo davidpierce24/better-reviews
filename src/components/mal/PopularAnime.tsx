@@ -21,7 +21,7 @@ interface Anime {
 
 async function PopularAnime() {
   try {
-    const response = await fetch(`http://api.jikan.moe/v4/top/anime?page=1&filter=bypopularity`, { signal: AbortSignal.timeout(10000) });
+    const response = await fetch(`http://api.jikan.moe/v4/top/anime?page=1&filter=bypopularity`, { signal: AbortSignal.timeout(5000) });
     console.log(response);
     if (!response.ok) {
       throw new Error(`API call failed with status: ${response.status}`);
@@ -43,7 +43,7 @@ async function PopularAnime() {
     }));
 
     return (
-      <SideScrollCharts listTitle="Popular Anime - MAL" itemList={animeList} />
+      <SideScrollCharts listTitle="Popular Anime All Time - MAL" itemList={animeList} />
     );
   } catch (error) {
     console.error("Failed to fetch popular anime:", error);

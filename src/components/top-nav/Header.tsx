@@ -8,23 +8,15 @@ import { Button } from "../ui/button";
 
 const navLinks = [
   {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
+    name: "Not Found",
+    href: "/notfound",
   },
 ];
 
 function Header() {
   return (
-    <header className="flex justify-between items-center py-2 px-4 border-b sticky top-0 z-10 backdrop-blur-md"
-    style={{ backdropFilter: 'blur(3px)' }}>
+    <header className="flex justify-between items-center py-2 px-4 border-b sticky top-0 z-10 backdrop-blur-md iosblur"
+    >
         <div className="flex gap-x-2 items-center">
         <Link href="/">
             <Button variant="default" size="icon">

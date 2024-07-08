@@ -42,7 +42,7 @@ async function TopAnime() {
     }));
 
     return (
-      <SideScrollCharts listTitle="Top Anime - MAL" itemList={animeList} />
+      <SideScrollCharts listTitle="Top Anime All Time - MAL" itemList={animeList} />
     );
   } catch (error) {
     console.error("Failed to fetch top anime:", error);

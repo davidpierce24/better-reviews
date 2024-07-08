@@ -74,3 +74,9 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .ios-blur {
+    -webkit-backdrop-filter: blur(20px); /* For Safari */
+    backdrop-filter: blur(20px); /* Standard syntax for other browsers */
+    /* background-color: rgba(255, 255, 255, 0.5); Semi-transparent background */
+  }

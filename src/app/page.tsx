@@ -8,7 +8,7 @@ import CurrentSeasonAnime from '@/components/mal/CurrentSeasonAnime'
 function page() {
   return (
     <main 
-    className='flex-1 flex py-6 flex-col gap-y-16'>
+    className='flex-1 flex py-6 flex-col gap-y-12'>
       <TopAnime />
       <PopularAnime />
       <CurrentSeasonAnime />
