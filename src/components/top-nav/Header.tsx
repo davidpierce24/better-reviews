@@ -15,7 +15,7 @@ const navLinks = [
 
 function Header() {
   return (
-    <header className="flex justify-between items-center py-2 px-4 border-b sticky top-0 z-10 backdrop-blur-md iosblur"
+    <header className="flex justify-between items-center py-2 px-4 border-b sticky top-0 z-10 backdrop-blur-md bg-background xs:bg-transparent"
     >
         <div className="flex gap-x-2 items-center">
         <Link href="/">

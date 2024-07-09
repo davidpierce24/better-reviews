@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss"
 
-const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily} = require("tailwindcss/defaultTheme")
+
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config = {
   darkMode: ["class"],
@@ -12,6 +14,10 @@ const config = {
 	],
   prefix: "",
   theme: {
+    screens:{
+      'xs': '475px',
+      ...defaultTheme.screens,
+    },
     container: {
       center: true,
       padding: "2rem",
