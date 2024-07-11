@@ -25,7 +25,7 @@ function Header() {
         </Link>
         <Link href="/">
             <h1 className="font-semibold">
-                Peaks
+                Better Reviews
             </h1>
         </Link>
         </div>

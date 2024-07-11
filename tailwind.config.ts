@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss"
 
-const { fontFamily} = require("tailwindcss/defaultTheme")
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 const defaultTheme = require('tailwindcss/defaultTheme')
 
@@ -85,7 +85,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), "prettier-plugin-tailwindcss"],
 } satisfies Config
 
 export default config
