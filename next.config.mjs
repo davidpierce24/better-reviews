@@ -7,6 +7,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'cdn.myanimelist.net',
+            }, 
+            {
+                protocol: 'http',
+                hostname: 'image.tmdb.org',
             }
         ]
     },

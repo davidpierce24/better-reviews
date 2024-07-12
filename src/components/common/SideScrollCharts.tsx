@@ -1,12 +1,5 @@
 import React, { useState } from 'react'
-import ChartCard from './ChartCard'
-
-interface ChartCardProps {
-    rank: number;
-    title: string;
-    imageUrl: string;
-    score: number;
-}
+import ChartCard, { ChartCardProps } from './ChartCard'
 
 interface ScrollProps{
     listTitle: string;
@@ -24,7 +17,7 @@ const SideScrollCharts: React.FC<ScrollProps> = (
         {itemList.map((item: ChartCardProps, index: number) => (
           <div key={item.rank}>
             <ChartCard
-              rank={index + 1}
+              rank={item.rank != null ? index + 1 : item.rank}
               title={item.title}
               imageUrl={item.imageUrl}
               score={item.score}

@@ -1,5 +1,6 @@
 import React from "react";
 import SideScrollCharts from "../common/SideScrollCharts";
+import { ChartCardProps } from "../common/ChartCard";
 
 interface data {
   rank: number;
@@ -12,12 +13,6 @@ interface data {
   score: number;
 }
 
-interface Anime {
-    rank: number;
-    title: string;
-    imageUrl: string;
-    score: number;
-}
 
 async function TopAnime() {
   try {
@@ -34,7 +29,7 @@ async function TopAnime() {
 
     const TopAnimeData: data[] = json.data;
 
-    const animeList: Anime[] = TopAnimeData.map((item) => ({
+    const animeList: ChartCardProps[] = TopAnimeData.map((item) => ({
       rank: item.rank,
       title: item.title,
       imageUrl: item.images.webp.image_url,

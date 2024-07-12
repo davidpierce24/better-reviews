@@ -7,13 +7,13 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="flex justify-between items-center py-6 px-10 border-t">
+    <footer className="flex flex-col sm:flex-row justify-between items-center py-6 px-10 border-t">
       <div>
         <p>© 2024 Better Reviews</p>
       </div>
       <div></div>
       <div>
-        <h3 className="text-md font-semibold">
+        <h3 className="text-sm">
           Massive thanks to our API providers
         </h3>
         <div className="flex flex-col gap-y-2 pl-2 pt-2">

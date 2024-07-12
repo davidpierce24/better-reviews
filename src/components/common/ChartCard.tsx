@@ -9,11 +9,11 @@ const lobster = Lobster({
   subsets: ["latin"],
 });
 
-interface ChartCardProps {
-  rank: number;
+export interface ChartCardProps {
+  rank?: number;
   title: string;
   imageUrl: string;
-  score: number;
+  score?: number;
 }
 
 const ChartCard: React.FC<ChartCardProps> = ({
@@ -36,28 +36,36 @@ const ChartCard: React.FC<ChartCardProps> = ({
           height={200}
         />
       </div>
-      <p
-        className={`${lobster.className} text-6xl font-bold absolute drop-shadow-xl drop-shadow-black text-background left-1 top-0 blur`}
-      >
-        {rank}
-      </p>
-      <p
-        className={`${lobster.className} text-6xl font-bold absolute drop-shadow-xl drop-shadow-black text-primary left-0 top-0`}
-      >
-        {rank}
-      </p>
-      <div className="absolute bottom-4 right-0 w-28 h-8 bg-background blur-lg"></div>
+      {rank != null && (
+        <p
+          className={`${lobster.className} text-6xl font-bold absolute drop-shadow-xl drop-shadow-black text-background left-1 top-0 blur`}
+        >
+          {rank}
+        </p>
+      )}
+      {rank != null && (
+        <p
+          className={`${lobster.className} text-6xl font-bold absolute drop-shadow-xl drop-shadow-black text-primary left-0 top-0`}
+        >
+          {rank}
+        </p>
+      )}
+      {score != null && (
+        <div className="absolute bottom-4 right-0 w-28 h-8 bg-background blur-lg" />
+      )}
       {/* <div
         className={`${lobster.className} text-4xl font-bold absolute drop-shadow-xl drop-shadow-black text-background bottom-2 right-1 blur flex items-center gap-x-1`}>
             {score}<StarFilledIcon
             className='h-6 w-6'/>
         </div> */}
-      <div
-        className={`${lobster.className} text-4xl font-bold absolute drop-shadow-xl drop-shadow-black text-primary bottom-2 right-2 flex items-center gap-x-1`}
-      >
-        {score}
-        <StarFilledIcon className="h-6 w-6" />
-      </div>
+      {score != null && score != 0 && (
+        <div
+          className={`${lobster.className} text-4xl font-bold absolute drop-shadow-xl drop-shadow-black text-primary bottom-2 right-2 flex items-center gap-x-1`}
+        >
+          {parseFloat(score.toString()).toFixed(2)}
+          <StarFilledIcon className="h-6 w-6" />
+        </div>
+      )}
     </div>
   );
 };
