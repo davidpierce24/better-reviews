@@ -1,4 +1,5 @@
 import { ChartCardProps } from "@/components/common/ChartCard";
+import { ChartModalProps } from "@/components/common/ChartModal";
 import SideScrollCharts from "@/components/common/SideScrollCharts";
 import React from "react";
 
@@ -28,7 +29,7 @@ async function TrendingMovies() {
         headers: {
           Authorization: `Bearer ${process.env.TMDBReadAccessToken}`,
         },
-      }
+      },
     );
     if (!response.ok) {
       throw new Error(`API call failed with status: ${response.status}`);
@@ -42,11 +43,13 @@ async function TrendingMovies() {
 
     const TrendingMovies: TrendingMovies[] = json.results;
 
-    const itemList: ChartCardProps[] = TrendingMovies.map((item) => ({
+    const itemList: ChartModalProps[] = TrendingMovies.map((item) => ({
+      id: item.id,
       rank: 1,
       title: item.title,
       imageUrl: "http://image.tmdb.org/t/p/w500/" + item.poster_path,
       score: item.vote_average,
+      description: item.overview
     }));
 
     return <SideScrollCharts listTitle="Trending Movies" itemList={itemList} />;

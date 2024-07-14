@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function NowPlayingMovies() {
-  return (
-    <div>NowPlayingMovies</div>
-  )
+  return <div>NowPlayingMovies</div>;
 }
 
-export default NowPlayingMovies
+export default NowPlayingMovies;

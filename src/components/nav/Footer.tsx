@@ -13,12 +13,10 @@ function Footer() {
       </div>
       <div></div>
       <div>
-        <h3 className="text-sm">
-          Massive thanks to our API providers
-        </h3>
+        <h3 className="text-sm">Massive thanks to our API providers</h3>
         <div className="flex flex-col gap-y-2 pl-2 pt-2">
           <div className="flex gap-x-2">
-            <Link href='https://myanimelist.net/'>
+            <Link href="https://myanimelist.net/">
               <Image
                 src={MALimg}
                 alt="MAL"

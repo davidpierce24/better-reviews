@@ -1,22 +1,18 @@
 import React from "react";
 import SideScrollCharts from "../common/SideScrollCharts";
+import { ChartModalProps } from "../common/ChartModal";
 
-interface data {
+export interface malData {
+  mal_id: number;
   rank: number;
-  title: string;
+  title_english: string;
   images: {
     webp: {
       image_url: string;
     };
   };
   score: number;
-}
-
-interface Anime {
-    rank: number;
-    title: string;
-    imageUrl: string;
-    score: number;
+  synopsis: string;
 }
 
 async function CurrentSeasonAnime() {
@@ -32,13 +28,15 @@ async function CurrentSeasonAnime() {
       return null; // Or some error state/component
     }
 
-    const CurrentSeasonAnimeData: data[] = json.data;
+    const CurrentSeasonAnimeData: malData[] = json.data;
 
-    const animeList: Anime[] = CurrentSeasonAnimeData.map((item) => ({
+    const animeList: ChartModalProps[] = CurrentSeasonAnimeData.map((item) => ({
+      id: item.mal_id,
       rank: item.rank,
-      title: item.title,
+      title: item.title_english,
       imageUrl: item.images.webp.image_url,
       score: item.score,
+      description: item.synopsis,
     }));
 
     return (

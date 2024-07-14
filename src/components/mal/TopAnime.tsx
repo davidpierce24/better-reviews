@@ -1,17 +1,7 @@
 import React from "react";
 import SideScrollCharts from "../common/SideScrollCharts";
-import { ChartCardProps } from "../common/ChartCard";
-
-interface data {
-  rank: number;
-  title: string;
-  images: {
-    webp: {
-      image_url: string;
-    };
-  };
-  score: number;
-}
+import { ChartModalProps } from "../common/ChartModal";
+import { malData } from "./CurrentSeasonAnime";
 
 
 async function TopAnime() {
@@ -27,17 +17,22 @@ async function TopAnime() {
       return null; // Or some error state/component
     }
 
-    const TopAnimeData: data[] = json.data;
+    const TopAnimeData: malData[] = json.data;
 
-    const animeList: ChartCardProps[] = TopAnimeData.map((item) => ({
+    const animeList: ChartModalProps[] = TopAnimeData.map((item) => ({
+      id: item.mal_id,
       rank: item.rank,
-      title: item.title,
+      title: item.title_english,
       imageUrl: item.images.webp.image_url,
       score: item.score,
+      description: item.synopsis,
     }));
 
     return (
-      <SideScrollCharts listTitle="Top Anime All Time - MAL" itemList={animeList} />
+      <SideScrollCharts
+        listTitle="Top Anime All Time - MAL"
+        itemList={animeList}
+      />
     );
   } catch (error) {
     console.error("Failed to fetch top anime:", error);
