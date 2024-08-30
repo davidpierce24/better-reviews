@@ -21,6 +21,7 @@ const SideScrollCharts: React.FC<ScrollProps> = ({ listTitle, itemList }) => {
               imageUrl={item.imageUrl}
               score={item.score}
               description={item.description}
+              itemType={item.itemType}
             />
           </div>
         ))}

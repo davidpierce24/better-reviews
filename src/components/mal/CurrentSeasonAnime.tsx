@@ -1,6 +1,9 @@
 import React from "react";
 import SideScrollCharts from "../common/SideScrollCharts";
-import { ChartModalProps } from "../common/ChartModal";
+import { ChartModalProps} from "../common/ChartModal";
+import { ItemType } from "@/lib/types";
+
+export const revalidate = 60 * 10;
 
 export interface malData {
   mal_id: number;
@@ -14,6 +17,7 @@ export interface malData {
   score: number;
   synopsis: string;
 }
+
 
 async function CurrentSeasonAnime() {
   try {
@@ -37,6 +41,7 @@ async function CurrentSeasonAnime() {
       imageUrl: item.images.webp.image_url,
       score: item.score,
       description: item.synopsis,
+      itemType: ItemType.anime,
     }));
 
     return (

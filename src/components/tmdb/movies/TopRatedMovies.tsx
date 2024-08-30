@@ -1,7 +1,10 @@
 import { ChartCardProps } from "@/components/common/ChartCard";
-import { ChartModalProps } from "@/components/common/ChartModal";
+import { ChartModalProps} from "@/components/common/ChartModal";
 import SideScrollCharts from "@/components/common/SideScrollCharts";
+import { ItemType } from "@/lib/types";
 import React from "react";
+
+export const revalidate = 60 * 10;
 
 interface TopRatedMovies {
   adult: boolean;
@@ -49,6 +52,7 @@ async function TopRatedMovies() {
       imageUrl: "http://image.tmdb.org/t/p/w500/" + item.poster_path,
       score: item.vote_average,
       description: item.overview,
+      itemType: ItemType.movie
     }));
 
     return (

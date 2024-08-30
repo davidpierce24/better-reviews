@@ -1,7 +1,10 @@
 import React from "react";
 import SideScrollCharts from "../common/SideScrollCharts";
-import { ChartModalProps } from "../common/ChartModal";
+import { ChartModalProps} from "../common/ChartModal";
 import { malData } from "./CurrentSeasonAnime";
+import { ItemType } from "@/lib/types";
+
+export const revalidate = 60 * 10;
 
 
 async function TopAnime() {
@@ -26,6 +29,7 @@ async function TopAnime() {
       imageUrl: item.images.webp.image_url,
       score: item.score,
       description: item.synopsis,
+      itemType: ItemType.anime
     }));
 
     return (

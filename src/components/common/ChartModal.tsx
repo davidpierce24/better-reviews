@@ -28,6 +28,7 @@ import Image from "next/image";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { StarFilledIcon } from "@radix-ui/react-icons";
+import { ItemType } from "@/lib/types";
 
 export interface ChartModalProps {
   id: number;
@@ -36,6 +37,7 @@ export interface ChartModalProps {
   imageUrl: string;
   score?: number;
   description?: string;
+  itemType: ItemType;
 }
 
 export const ChartModal: React.FC<ChartModalProps> = ({
@@ -45,6 +47,7 @@ export const ChartModal: React.FC<ChartModalProps> = ({
   imageUrl,
   score,
   description,
+  itemType,
 }) => {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");

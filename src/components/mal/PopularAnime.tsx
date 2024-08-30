@@ -1,8 +1,10 @@
 import React from "react";
 import SideScrollCharts from "../common/SideScrollCharts";
-import { ChartModalProps } from "../common/ChartModal";
+import { ChartModalProps} from "../common/ChartModal";
 import { malData } from "./CurrentSeasonAnime";
+import { ItemType } from "@/lib/types";
 
+export const revalidate = 60 * 10;
 
 async function PopularAnime() {
   try {
@@ -30,6 +32,7 @@ async function PopularAnime() {
       imageUrl: item.images.webp.image_url,
       score: item.score,
       description: item.synopsis,
+      itemType: ItemType.anime
     }));
 
     return (
